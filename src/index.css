@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: auto; } /* Lenis handles smooth scroll */
+  body { font-family: 'Lato', 'Segoe UI', Helvetica, sans-serif; -webkit-font-smoothing: antialiased; }
+}
+
+@layer utilities {
+  /* Scroll hint pulse animation */
+  @keyframes scrollPulse {
+    0%, 100% { transform: scaleY(0.6); opacity: 0.5; }
+    50%       { transform: scaleY(1);   opacity: 1;   }
+  }
+  .animate-scroll-pulse { animation: scrollPulse 2s ease-in-out infinite; }
+
+  /* Stage transition classes applied by GSAP — just ensures initial state */
+  .hero-stage { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; }
+
+  /* On mobile the text panel is a bottom strip — anchor content to bottom */
+  @media (max-width: 767px) {
+    .hero-stage { justify-content: flex-end; }
+  }
+}

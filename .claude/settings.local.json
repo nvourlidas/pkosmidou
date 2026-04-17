@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm create:*)",
+      "Bash(npm install:*)",
+      "Bash(powershell -Command \"Get-ChildItem ''C:\\\\Users\\\\Vourlidas'' -Recurse -Filter ''ffprobe.exe'' -ErrorAction SilentlyContinue | Select-Object FullName\")",
+      "Bash(powershell -Command \"Get-Command ffmpeg 2>$null; Get-ChildItem ''C:\\\\'' -Filter ''ffmpeg.exe'' -Recurse -ErrorAction SilentlyContinue -Depth 4 | Select-Object -First 3 FullName\")",
+      "Bash(node -e \"const ffmpeg = require\\(''ffmpeg-static''\\); console.log\\(ffmpeg\\);\")",
+      "Bash(\"D:/Projects/pkosmidou/node_modules/ffmpeg-static/ffmpeg.exe\" -i \"d:/Projects/pkosmidou/veo3second.mp4\")",
+      "Bash(\"D:/Projects/pkosmidou/node_modules/ffmpeg-static/ffmpeg.exe\" -i \"d:/Projects/pkosmidou/veo3second.mp4\" -vf \"fps=24,scale=1280:-1\" -c:v libwebp -quality 82 \"d:/Projects/pkosmidou/public/frames/frame_%04d.webp\")",
+      "Bash(npm run:*)",
+      "Bash(ffprobe -v error -select_streams v:0 -show_entries stream=width,height,duration,r_frame_rate,nb_frames -of csv=p=0 \"d:/Projects/pkosmidou/veo3grey.mp4\")",
+      "Bash(where ffprobe:*)",
+      "Bash(node -e \"try{const p=require\\('ffprobe-static'\\);console.log\\(p.path\\)}catch\\(e\\){console.log\\('not found'\\)}\")",
+      "Bash(node -e ':*)"
+    ]
+  }
+}
