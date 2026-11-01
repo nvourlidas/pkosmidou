@@ -152,24 +152,32 @@ export default function ProjectModal({ project, onClose }: Props) {
   // ── Shared info body content ──────────────────────────────────
   const infoBody = (
     <div className="flex flex-col gap-5">
-      <p className="text-[0.9rem] leading-[1.85] text-gray-700">{project.body}</p>
-      <hr className="border-gray-100" />
-      <div>
-        <span className="block text-[10px] font-bold tracking-[0.16em] uppercase text-gray-400 mb-3">
-          Χαρακτηριστικά
-        </span>
-        <div className="flex flex-wrap gap-2">
-          {project.tags.map(tag => (
-            <span
-              key={tag}
-              className="text-[10px] font-bold tracking-[0.1em] uppercase px-3 py-1.5 rounded-full border border-pk-purple-border bg-pk-purple-pale text-pk-purple whitespace-nowrap"
-            >
-              {tag}
+      {project.body && (
+        <>
+          <p className="text-[0.9rem] leading-[1.85] text-gray-700">{project.body}</p>
+          <hr className="border-gray-100" />
+        </>
+      )}
+      {project.tags.length > 0 && (
+        <>
+          <div>
+            <span className="block text-[10px] font-bold tracking-[0.16em] uppercase text-gray-400 mb-3">
+              Χαρακτηριστικά
             </span>
-          ))}
-        </div>
-      </div>
-      <hr className="border-gray-100" />
+            <div className="flex flex-wrap gap-2">
+              {project.tags.map(tag => (
+                <span
+                  key={tag}
+                  className="text-[10px] font-bold tracking-[0.1em] uppercase px-3 py-1.5 rounded-full border border-pk-purple-border bg-pk-purple-pale text-pk-purple whitespace-nowrap"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+          <hr className="border-gray-100" />
+        </>
+      )}
       <button
         onClick={onClose}
         className="self-start text-[11px] font-bold tracking-[0.08em] uppercase text-white bg-pk-purple px-5 py-2.5 rounded-lg hover:bg-pk-purple-hover transition-colors duration-200"
